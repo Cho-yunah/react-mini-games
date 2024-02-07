@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const RefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 module.exports = {
   name: 'react-mini-games',
@@ -14,7 +15,7 @@ module.exports = {
   },
   module: {
     rules: [{
-      test: /\.jsx?/, 
+      test: /\.jsx?$/, 
       loader: 'babel-loader',
       options: {
         presets: [
@@ -26,15 +27,25 @@ module.exports = {
           }],
 					'@babel/preset-react'  
 				],
-        plugins:[],
+        plugins: [
+          '@babel/plugin-proposal-class-properties',
+          'react-refresh/babel'
+        ],
       }
     }]
   },
   plugins: [
-    new webpack.LoaderOptionsPlugin({debug: true})
+    // new webpack.LoaderOptionsPlugin({debug: true}),
+    new RefreshWebpackPlugin()
   ],
   output : {
     path: path.join(__dirname, 'dist'),
-    filename: 'app.js'
+    filename: 'app.js',
+    publicPath: '/dist',
+  },
+  devServer : {
+    devMiddleware: { publicPath: '/dist' },
+    static: { directory: path.resolve(__dirname) },
+    hot: true
   }
 }
