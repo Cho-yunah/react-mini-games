@@ -29,8 +29,6 @@ export default function WordRelayHooks() {
     setValue(e.target.value)
   }
 
-
-
     return <>
       <h1>{title}</h1>
       <div>{word}</div>
