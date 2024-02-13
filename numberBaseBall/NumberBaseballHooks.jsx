@@ -1,5 +1,7 @@
 import React, { Component, createRef } from 'react';
 import Try from './Try';
+import RenderTest from './RenderTest';
+import TryHooks from './TryHooks';
 
 function getNumbers() { // 숫자 네 개를 겹치지 않고 랜덤하게 뽑는 함수
   const candidate = [1,2,3,4,5,6,7,8,9];
@@ -75,10 +77,13 @@ function NumberBaseball () {
         <ul>
           {tries.map((v, i) => {
             return (
-              <Try key={`${i + 1}차 시도 :`} tryInfo={v} />
+              // <Try key={`${i + 1}차 시도 :`} tryInfo={v} />
+              <TryHooks key={`${i + 1}차 시도 :`} tryInfo={v} />
             );
           })}
         </ul>
+
+        <RenderTest/>
       </>
     );
 

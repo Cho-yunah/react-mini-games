@@ -5,7 +5,7 @@ import NumberBaseball from './numberBaseBall/NumberBaseball';
 
 ReactDOM.render(<NumberBaseball />, document.querySelector('#root'));
 
-const onSubmitForm = useCallback((e) => {
+const onSubmitForm = (e) => {
   e.preventDefault();
   if (value === answer.join('')) {
     setTries((t) => ([
@@ -54,4 +54,4 @@ const onSubmitForm = useCallback((e) => {
       inputEl.current.focus();
     }
   }
-}, [value, answer]);
+};
