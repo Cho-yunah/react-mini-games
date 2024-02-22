@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import RSP from './RSP/RSPHooks';
+import LottoHooks from './lotto/LottoHooks';
 
-ReactDOM.render(<RSP />, document.querySelector('#root'));
+ReactDOM.render(<LottoHooks/>, document.querySelector('#root'));
 
