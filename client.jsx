@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import LottoHooks from './lotto/LottoHooks';
+// import LottoHooks from './lotto/LottoHooks';
+import { TicTacToe } from './tictactoe/TicTacToe';
 
-ReactDOM.render(<LottoHooks/>, document.querySelector('#root'));
+ReactDOM.render(<TicTacToe/>, document.querySelector('#root'));
 
